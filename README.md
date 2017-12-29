@@ -4,7 +4,7 @@ This Repository is a proof of concept which shows that it is possible to prevent
 
 ## How it works
 
-The provided code covers the example of a fully decentralized freelancing platform where a client signs a job creation command and a freelancer signs a bid creation command which are distributed via Whisper. If the freelancer decides to select a freelancer he simple needs to upload (can be abstracted away from the user) his initial job creation command and the chosen bid. If he decides to not credit the job to anyone nobody has to pay gas and the blockchain hasn't to deal with the (useless) transactions.
+The provided code covers the example of a fully decentralized freelancing platform where a client signs a job creation command and a freelancer signs a bid creation command which are distributed via Whisper. If the client decides to select a freelancer he simple needs to invoke the execute command using (can be abstracted away from the user) his signed initial job creation command and the signed chosen bid. If he decides to not credit the job to anyone nobody has to pay gas and the blockchain don't has to deal with the (useless) transactions.
 
 ## signing messages
 
