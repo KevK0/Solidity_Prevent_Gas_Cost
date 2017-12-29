@@ -1,16 +1,16 @@
 # Solidity_Prevent_Gas_Cost
 
-This Repository is a proof of concept which shows that it is possible to prevent gas cost for various actions on the blockchain using Whisper/Swarm and message signing (currently only natively supported by MetaMask).
+This Repository is a proof of concept which shows that it is possible to prevent gas cost for various actions on the blockchain by using Whisper/Swarm and message signing (currently only natively supported by MetaMask).
 
 ## How it works
 
-The provided code covers the example of a fully decentralized freelancing platform where a client signs a job creation command and a freelancer signs a bid creation command which are distributed via Whisper. If the client decides to select a freelancer he simple needs to invoke the execute command using (can be abstracted away from the user) his signed initial job creation command and the signed chosen bid. If he decides to not credit the job to anyone nobody has to pay gas and the blockchain don't has to deal with the (useless) transactions.
+The provided code covers the example of a fully decentralized freelancing platform where a client signs a job creation command and a freelancer signs a bid creation command which are distributed via Whisper. If the client decides to select a freelancer he simple needs to invoke the execute command using (can be abstracted away from the user) his signed initial job creation command and the signed chosen bid. In this case he only needs to pay gas when chosing a freelancer. If he decides to not credit the job to anyone nobody has to pay gas and the blockchain don't has to deal with the (useless) transactions.
 
 ## signing messages
 
 ### Job
 
-In order to publish a job via swarm one needs to sign a command such as the one seen below.
+In order to publish a job via whisper one needs to sign a command such as the one seen below.
 ```
 bzz://0x0;1514526663;Freelance
 ```
@@ -29,11 +29,11 @@ We are later able to idetify the signer via a ecrecover function call in the sma
 
 ### Bid
 
-In order to publish a bid via swarm one needs to sign a command such as the one seen below.
+In order to publish a bid via whisper one needs to sign a command such as the one seen below.
 ```
 0x627a7a3a2f2f3078303b313531343532363636333b467265656c616e6365;1514527023;100000000000000000;Bid
 ```
-The first parameter is the previously generated signed message of the job the second is the timestamp when the message was created. The third is the proposed price of the freelancer and the fourth is again a identification string.
+The first parameter is the previously generated signed message of the job (to identify the job) the second is the timestamp when the message was created. The third is the proposed price of the freelancer and the fourth is again a identification string.
 
 When the message was signed successfully we receive a string like this.
 ```
