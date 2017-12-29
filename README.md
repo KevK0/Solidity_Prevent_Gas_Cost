@@ -1,4 +1,4 @@
-# Solidity_Prevent_Gas_Cost
+# Solidity: Prevent Gas Cost for various actions
 
 This Repository is a proof of concept which shows that it is possible to prevent gas cost for various actions on the blockchain by using Whisper/Swarm and message signing (currently only natively supported by MetaMask).
 
